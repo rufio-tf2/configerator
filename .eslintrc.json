@@ -1,0 +1,39 @@
+{
+  "extends": ["react-app", "plugin:prettier/recommended"],
+  "plugins": [
+    "prettier",
+    "eslint-plugin-import-order-alphabetical",
+    "react-hooks"
+  ],
+  "rules": {
+    "prettier/prettier": "warn",
+    "import-order-alphabetical/order": [
+      "error",
+      {
+        "groups": [
+          ["builtin", "external"],
+          "internal",
+          ["parent", "sibling", "index"]
+        ],
+        "newlines-between": "always"
+      }
+    ],
+    "no-unused-vars": [
+      "error",
+      {
+        "args": "after-used",
+        "argsIgnorePattern": "^_$",
+        "ignoreRestSiblings": true,
+        "vars": "all",
+        "varsIgnorePattern": "^_$"
+      }
+    ],
+    "sort-imports": [
+      "error",
+      { "ignoreCase": true, "ignoreDeclarationSort": true }
+    ],
+    "sort-keys": ["error", "asc", { "caseSensitive": true, "natural": true }],
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn"
+  }
+}
